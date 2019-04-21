@@ -1,0 +1,115 @@
+html {
+        background-image:linear-gradient(to right, #bdc3c7,#2c3e50);
+        height:100%;
+        background-position:center;
+        background-size:cover;
+}
+
+#login {
+        text-align:center;
+        display:none;
+}
+
+#interface {
+        display:none;
+}
+#submission-area {
+        /*position: absolute;
+        top: 175px;*/
+        width:40 %;
+}
+
+#finishregisterarea {
+        display:none;
+}
+
+#eventArea .tab {
+        overflow: hidden;
+        /*border:1px solid #ccc;*/
+        background-color:#f1f1f1;
+        text-align: center;
+}
+
+#eventArea .tab button {
+        background-color: inherit;
+        border:none;
+        outline:none;
+        cursor:pointer;
+        padding:14px 14px;
+        transition:0.3s;
+        display: inline-block;
+        font-weight: bold;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+}
+
+#eventArea .tab button:hover {
+        background-color:#ddd;
+}
+
+/*#eventArea .tab button:active {
+        background-color:#ff0000;
+}*/
+
+#eventArea .tab .tablinksactive {
+        background-color: tan;
+}
+
+#eventArea .tab .tablinksactive:hover {
+        background-color: tan;
+}
+
+.tabcontent {
+        display:block;
+        padding:6px 12px;
+        border-top: none;
+}
+
+.tabcontent div p {
+        padding-left:35px;
+}
+
+#prompt,#eventArea {
+        border-style:outset;
+        border-width:8px;
+        background-color:tan;
+}
+
+#prompt {
+
+        border-color:red;
+        width:20%;
+}
+
+
+#submission {
+        height:50px;
+        font-size:35px;
+}
+
+#eventArea {
+        position: absolute;
+        top: 50px;
+        right:10px;
+        width: 60%;
+        height: 80%;
+        overflow-y:auto;
+        border-color: maroon;
+}
+
+#eventsSign {
+        position:absolute;
+        top:5px;
+        right:10px;
+        width:35%;
+        margin-bottom:5px;
+}
+
+#edit-form {
+        display:none;
+        position: absolute;
+        left:50%;
+        width:30%;
+        background-color: white;
+        z-index:5;
+}

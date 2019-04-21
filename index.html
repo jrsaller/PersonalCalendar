@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Resourceful!</title>
+    <link rel="stylesheet" href="style.css" />
+    
+</head>
+<body>
+    <div id = "login">
+        <h3> Welcome to Jack's Calendar System!</h3>
+        <h3>Email:</h3> <input type = "text" id = "submit-username">
+        <h3>Password:</h3> <input type = "password" id = "submit-password">
+        <br><br>
+        <input type="submit" value = "Submit" id = "submit-login">
+        <input type="submit" value="Register" id = "submit-register">
+        <br>
+        <div id = "problem"></div>
+    </div>
+    <div id = "finishregisterarea">
+        <h3>First Name:</h3><input type = "text" id = "firstname">
+        <h3>Last Name:</h3><input type="text" id = "lastname" ><br><br>
+        <input type = "submit" value = "Register" id = "finish-register">
+    </div>
+    <div id = "interface">
+        <div id = "edit-form">
+                <h2>Name:</h2><input type = "text" id = "name-edit">
+                <h2>Date:</h2><input type = "text" id = "date-edit">
+                <h2>Time:</h2><input type = "text" id = "time-edit">
+                <h2>Description:</h2><input type = "text" id = "description-edit">
+                <h2>Location:</h2><input type = "text" id = "location-edit">
+                <br><br>
+                <input type = "submit" value = "Submit" id = "submit-edit-button">
+
+        </div>
+        <div id = "submission-area">
+                <h1 id="prompt">Enter your Event:</h1>
+                <form>
+
+                        <h2>Title:</h2><input type = "text" id = "name-submission">
+                        <h2>Day:</h2><input type = "text" id = "date-submission">
+                        <h2>Time:</h2><input type = "text" id = "time-submission">
+                        <h2>Description:</h2><input type = "text" id = "description-submission">
+                        <h2>Location:</h2><input type = "text" id = "location-submission">
+
+                </form>
+        
+                <input type = "submit" value = "Submit" id = "submit-button">
+    
+        </div>
+        <h3 id = "eventsSign">EVENTS</h3><br>
+        <div id="eventArea">
+                <div class = "tab">
+                        <button class = "tablinksactive" onclick="openDay(event,'Monday')">Monday</button>
+                        <button class = "tablinks" onclick="openDay(event,'Tuesday')">Tuesday</button>
+                        <button class = "tablinks" onclick="openDay(event,'Wednesday')">Wednesday</button>
+                        <button class = "tablinks" onclick="openDay(event,'Thursday')">Thursday</button>
+                        <button class = "tablinks" onclick="openDay(event,'Friday' )">Friday</button>
+                </div>
+                <div id = "eventList" class="tabcontent"></div>
+        </div>
+    </div>
+    
+
+    <script src="app.js"></script>
+</body>
+</html>
