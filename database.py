@@ -76,8 +76,11 @@ class EventsDB:
     def getMaxID(self):
         self.cursor.execute("SELECT MAX(id) FROM events")
         result = self.cursor.fetchone()
-        print(result)
-        return result["MAX(id)"]
+        print("MAX ID = " + result)
+        if "MAX(id)" in result:
+            return result["MAX(id)"]
+        else:
+            return 0
 
     def getMaxUser(self):
         self.cursor.execute("SELECT MAX(id) FROM users")
