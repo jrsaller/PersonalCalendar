@@ -1,5 +1,5 @@
 var serverLocation = "http://localhost:8080/events"
-var hostServerURL = "http://personal-calendar.herokuapp.com"
+var hostServerURL = "https://personal-calendar.herokuapp.com"
 var submitbutton = document.querySelector("#submit-button");
 var eventList = document.querySelector("#eventList");
 var editForm = document.querySelector("#edit-form");
@@ -100,7 +100,7 @@ function showData() {
         var currentPlace = document.querySelector("eventList")
         //console.log(currentPlace)
         //console.log(activeDay)
-        fetch(serverLocation,{ credentials:"include" }).then(function(response) {
+        fetch(hostServerURL + "/events",{ credentials:"include" }).then(function(response) {
             console.log(response.status)
             if (response.status == 401 || response.status == 422){
                 //SHOW LOGIN/REGISTER FORM
@@ -208,7 +208,7 @@ var editEvent = function(id,name,date,time,description,location) {
     messageToSend += "&location=" + encodeURIComponent(location);
     messageToSend += "&id=" + encodeURIComponent(id);
     console.log("Message to send: " + messageToSend);
-    fetch(serverLocation + "/" + id , {
+    fetch(hostServerURL + "/events/" + id , {
         body:messageToSend,
         method: "PUT",
         credentials:"include",
@@ -245,7 +245,7 @@ submitbutton.onclick = function() {
     messageToSend += "&description=" + encodeURIComponent(description.value);
     messageToSend += "&location=" + encodeURIComponent(location.value);
     console.log("Message to send: " + messageToSend);
-    fetch(serverLocation , {
+    fetch(hostServerURL + "/events" , {
                                 body: messageToSend,
                                 method: "POST",
                                 credentials:"include",
