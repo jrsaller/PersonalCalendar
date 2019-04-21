@@ -85,7 +85,10 @@ class EventsDB:
     def getMaxUser(self):
         self.cursor.execute("SELECT MAX(id) FROM users")
         result = self.cursor.fetchone()
-        return result["MAX(id)"]
+        if "MAX(id)" in result:
+            return result["MAX(id)"]
+        else:
+            return 0
     
     def getUserByEmail(self,email):
         sql = "SELECT * FROM users WHERE email = %s"
