@@ -97,6 +97,10 @@ class MyRequestHandler(BaseHTTPRequestHandler):
             #Try to create a session, but got nothing back when looking for them in the database
             self.handle401()
         else:
+            print(password)
+            print(password.encode("utf-8"))
+            print(user["password"])
+            print(user["password"].encode())
             if bcrypt.hashpw(password.encode("utf-8"),user["password"].encode()) == user["password"].encode():
                 #print("GOOD PASSWORD")
                 #The user has been Authenticated
