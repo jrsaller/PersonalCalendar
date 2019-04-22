@@ -123,6 +123,8 @@ class MyRequestHandler(BaseHTTPRequestHandler):
         db = EventsDB()
         if db.getUserByEmail(email) == None:
             encodedPass = password.encode()
+            print("Encoded password")
+            print(encodedPass)
             db.registerUser(fname,lname,email,encodedPass)
             self.send_response(201)
             self.end_headers()

@@ -99,6 +99,8 @@ class EventsDB:
             return result
     def registerUser(self,fname,lname,email,password):
         sql = "INSERT INTO users(id,firstname,lastname,email,password) VALUES(%s,%s,%s,%s,%s)"
+        print(password)
+        print("password on register")
         num = self.getMaxUser()
         if (num == None) :
             num = 0
