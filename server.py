@@ -304,6 +304,7 @@ class MyRequestHandler(BaseHTTPRequestHandler):
         if self.isLoggedIn():
             parts = self.path.split("/")[1:]
             collection = parts[0]
+            print(self.path)
             print(collection)
             if len(parts) >1:
                 id = parts[1]
