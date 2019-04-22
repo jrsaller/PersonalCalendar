@@ -121,10 +121,7 @@ class MyRequestHandler(BaseHTTPRequestHandler):
         db = EventsDB()
         if db.getUserByEmail(email) == None:
             encodedPass = password.encode()
-            print(encodedPass)
-            hashPass = bcrypt.hashpw(encodedPass,salt)
-            print(hashPass)
-            db.registerUser(fname,lname,email,hashPass)
+            db.registerUser(fname,lname,email,encodedPass)
             self.send_response(201)
             self.end_headers()
             self.wfile.write(bytes("User successfully registered!","utf-8"))
