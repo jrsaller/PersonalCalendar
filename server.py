@@ -97,8 +97,10 @@ class MyRequestHandler(BaseHTTPRequestHandler):
             #Try to create a session, but got nothing back when looking for them in the database
             self.handle401()
         else:
-            print("Hashed pass on session create" + bcrypt.hashpw(password.encode(),bcrypt.gensalt()))
-            print("Pulled password " + user["password"])
+            print("hashed pass")
+            print(bcrypt.hashpw(password.encode(),bcrypt.gensalt()))
+            print("pulled pass")
+            print(user["password"])
             if bcrypt.checkpw(password.encode("utf-8"),user["password"]):
                 #print("GOOD PASSWORD")
                 #The user has been Authenticated
