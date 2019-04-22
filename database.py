@@ -29,11 +29,11 @@ class EventsDB:
         self.connection.close()
 
     def createEventsTable(self):
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS events(id SERIAL PRIMARY KEY,title VARCHAR(255),date VARCHAR(255),time VARCHAR(255),description VARCHAR(255),location VARCHAR(255))")
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS events(id SERIAL PRIMARY KEY,title TEXT,date TEXT,time TEXT,description TEXT,location TEXT)")
         self.connection.commit()
 
     def createUsersTable(self):
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS users(id SERIAL PRIMARY KEY,firstname VARCHAR(255),lastname VARCHAR(255),email VARCHAR(255),password VARCHAR(255))")
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS users(id SERIAL PRIMARY KEY,firstname TEXT,lastname TEXT,email TEXT,password TEXT)")
         self.connection.commit()
 
     def createEvent(self,id,title,date,time,description,location):
