@@ -98,7 +98,7 @@ class MyRequestHandler(BaseHTTPRequestHandler):
             self.handle401()
         else:
             print(user["password"])
-            if bcrypt.checkpw(password.encode("utf-8"),user["password"]):
+            if bcrypt.checkpw(password.encode("utf-8"),user["password"].encode()):
                 #print("GOOD PASSWORD")
                 #The user has been Authenticated
                 self.session["userid"] = user["id"]
