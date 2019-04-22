@@ -97,7 +97,6 @@ class MyRequestHandler(BaseHTTPRequestHandler):
             #Try to create a session, but got nothing back when looking for them in the database
             self.handle401()
         else:
-            print(user["password"])
             if bcrypt.checkpw(password.encode("utf-8"),user["password"].encode()):
                 #print("GOOD PASSWORD")
                 #The user has been Authenticated
@@ -120,11 +119,7 @@ class MyRequestHandler(BaseHTTPRequestHandler):
         db = EventsDB()
         if db.getUserByEmail(email) == None:
             encodedPass = password.encode()
-            print("Encoded password")
-            print(encodedPass)
             hashPass = bcrypt.hashpw(encodedPass,bcrypt.gensalt())
-            print(hashPass)
-            print("Hashed password")
             db.registerUser(fname,lname,email,hashPass)
             self.send_response(201)
             self.end_headers()
