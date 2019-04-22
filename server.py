@@ -155,7 +155,10 @@ class MyRequestHandler(BaseHTTPRequestHandler):
         #name = parsed_body["name"][0]
         #cuisine = parsed_body["cuisine"][0]
         db = EventsDB()
-        ID = db.getMaxID() + 1
+        ID = db.getMaxID()
+        if ID == None:
+            ID = 0
+        ID += 1
         title = parsed_body["title"][0]
         date = parsed_body["date"][0]
         time = parsed_body["time"][0]
