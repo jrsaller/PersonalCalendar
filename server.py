@@ -100,8 +100,8 @@ class MyRequestHandler(BaseHTTPRequestHandler):
             print(password)
             print(password.encode("utf-8"))
             print(user["password"])
-            print(user["password"].encode())
-            if bcrypt.hashpw(password.encode("utf-8"),user["password"].encode()) == user["password"].encode():
+            print(user["password"].decode())
+            if bcrypt.hashpw(password.encode("utf-8"),user["password"].decode()) == user["password"].encode():
                 #print("GOOD PASSWORD")
                 #The user has been Authenticated
                 self.session["userid"] = user["id"]
