@@ -104,7 +104,7 @@ class EventsDB:
         num = self.getMaxUser()
         if (num == None) :
             num = 0
-        self.cursor.execute(sql,[num+1,fname,lname,email,password])
+        self.cursor.execute(sql,[num+1,fname,lname,email,password.decode("utf-8")])
         self.connection.commit()
         return
 
