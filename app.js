@@ -190,7 +190,7 @@ function showData() {
 };
         
 var deleteEvent = function(id) {
-    fetch (hostServerURL + `/${id}`, {
+    fetch (hostServerURL + `/events/${id}`, {
         method:"DELETE",
         credentials:"include"
     }).then(function(response) {
