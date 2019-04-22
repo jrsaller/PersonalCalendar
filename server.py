@@ -125,7 +125,7 @@ class MyRequestHandler(BaseHTTPRequestHandler):
             encodedPass = password.encode()
             print("Encoded password")
             print(encodedPass)
-            hashpass = bcrypt.hashpw(encodedPass,bcrypt.gensalt())
+            hashPass = bcrypt.hashpw(encodedPass,bcrypt.gensalt())
             print(hashPass)
             print("Hashed password")
             db.registerUser(fname,lname,email,hashPass)
